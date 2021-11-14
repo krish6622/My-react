@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello StackBlitz!</h1>
-        <p>Start editing to see some magic happen :)</p>
+        <p>Start editing to see magic happen :)</p>
         <button onClick={this.increment}> in </button>
         <button onClick={this.decrement}> de </button>
         <button onClick={this.push}> push </button>
@@ -45,9 +45,4 @@ class App extends React.Component {
     );
   }
 }
-ReactDOM.render(
-  <provider store={store}>
-    <App />
-  </provider>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
