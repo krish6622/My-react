@@ -14,12 +14,22 @@ class App extends React.Component {
 
   increment = () => {
     store.dispatch({ type: COUNTER_INCREMENT });
-    console.log(store.getState().count);
+    console.log(store.getState());
   };
 
   decrement = () => {
     store.dispatch({ type: COUNTER_DECREMENT });
-    console.log(store.getState().count);
+    console.log(store.getState());
+  };
+
+  push = () => {
+    store.dispatch({ type: 'push', value: Math.random() });
+    console.log(store.getState());
+  };
+
+  pop = () => {
+    store.dispatch({ type: 'pop', value: Math.random() });
+    console.log(store.getState());
   };
 
   render() {
@@ -29,6 +39,8 @@ class App extends React.Component {
         <p>Start editing to see some magic happen :)</p>
         <button onClick={this.increment}> in </button>
         <button onClick={this.decrement}> de </button>
+        <button onClick={this.push}> push </button>
+        <button onClick={this.pop}> pop </button>
       </div>
     );
   }
