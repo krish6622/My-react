@@ -1,10 +1,11 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import './style.css';
 import ReactDOM from 'react-dom';
 import store, { COUNTER_INCREMENT, COUNTER_DECREMENT } from './store';
-import { useDispatch, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
+import Hello from './Hello';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,12 +35,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.increment}> in </button>
-        <button onClick={this.decrement}> de </button>
-        <button onClick={this.push}> push </button>
-        <button onClick={this.pop}> pop </button>
-      </div>
+      <Provider store={store}>
+        <div>
+          <Hello />
+          <button onClick={this.increment}> in </button>
+          <button onClick={this.decrement}> de </button>
+          <button onClick={this.push}> push </button>
+          <button onClick={this.pop}> pop </button>
+        </div>
+      </Provider>
     );
   }
 }
