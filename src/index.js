@@ -35,8 +35,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello StackBlitz!</h1>
-        <p>Start editing to see magic happen :)</p>
         <button onClick={this.increment}> in </button>
         <button onClick={this.decrement}> de </button>
         <button onClick={this.push}> push </button>
