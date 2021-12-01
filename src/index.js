@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import store, { COUNTER_INCREMENT, COUNTER_DECREMENT } from './store';
 import { Provider } from 'react-redux';
 import Hello from './Hello';
+import * as redux from 'redux-thunk';
 
 class App extends Component {
   constructor() {

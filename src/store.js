@@ -1,4 +1,5 @@
 import * as redux from 'redux';
+import thunk from 'redux-thunk';
 
 export const COUNTER_INCREMENT = 'counter/increment';
 export const COUNTER_DECREMENT = 'counter/decrement';
@@ -49,6 +50,6 @@ const rootReducer = (state = [], action) => {
   };
 };
 
-const store = redux.createStore(rootReducer);
+const store = redux.createStore(rootReducer, redux.applyMiddleware(thunk));
 
 export default store;
